@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Drift Max</title>
+
+<style>
+/* RESET TOTAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* LAYOUT GERAL */
+.layout {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  height: 100vh;
+  border: 5px solid rgb(255, 255, 255);
+}
+
+/* COLUNA ESQUERDA */
+.left {
+  display: grid;
+  grid-template-rows: 250px 1fr;
+  border-right: 5px solid rgb(0, 0, 0);
+}
+
+/* LOGO */
+.logo {
+  border-bottom: 5px solid rgb(0, 0, 0);
+  height: 250px;
+  overflow: hidden;
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* MENU */
+.menu {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.menu button {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+  cursor: pointer;
+}
+
+/* Tema 4 no final */
+.menu button.tema-final {
+  margin-top: auto;
+}
+
+/* COLUNA DIREITA */
+.right {
+  display: grid;
+  grid-template-rows: 250px 1fr;
+}
+
+/* VÍDEO */
+.video {
+  border-bottom: 5px solid  rgb(0, 0, 0);
+  height: 250px;
+  overflow: hidden;
+}
+
+.video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* TEXTO */
+.texto {
+  padding: 20px;
+  font-size: 18px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="layout">
+
+  <!-- ESQUERDA -->
+  <div class="left">
+    <div class="logo">
+      <img src="logo.png" alt="Logo Drift">
+    </div>
+
+    <div class="menu">
+      <button onclick="mostrarTexto(1)">Ultimate Drift</button>
+      <button onclick="mostrarTexto(2)">Eu no ultimate</button>
+      <button onclick="mostrarTexto(3)">Enzo Gregório</button>
+      <button onclick="mostrarTexto(4)">Med Max Marrow</button>
+
+    <!-- TEMA INITIAL-D -->
+      <button onclick="abrirInitialD()">Initial-D</button>
+
+      <!-- TEMA 4 ABRE LOGIN -->
+      <button class="tema-final" onclick="abrirLogin()">Login</button>
+    </div>
+  </div>
+
+  <!-- DIREITA -->
+  <div class="right">
+    <div class="video">
+      <video controls>
+        <source src="video.mp4.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="texto" id="texto">       
+as informações vão aparecer aqui.    d~¬(0_0)¬~b   
+    </div>
+  </div>
+
+</div>
+
+<script>
+function mostrarTexto(tema) {
+  const texto = document.getElementById("texto");
+/*  codigo erro para colocar logo -> <div class="logo">
+      <img src="logo.png" alt="Logo Drift">
+    </div> */
+  if (tema === 1) {
+    texto.innerText = "Ultimate Drift é um evento automotivo voltado para os apaixonados por drift, velocidade e controle extremo. Criado para reunir pilotos, equipes e fãs do automobilismo, o Ultimate Drift oferece uma experiência completa, onde técnica, emoção e espetáculo se encontram na pista.O evento acontece em pistas fechadas e controladas, garantindo segurança para pilotos e público. Nele, os participantes colocam à prova suas habilidades em manobras de derrapagem, precisão nas curvas e domínio total do carro, sempre buscando o drift perfeito.Alé das disputas na pista, o Ultimate Drift também é um ponto de encontro da cultura automotiva, reunindo carros preparados, projetos únicos, público entusiasta e uma atmosfera cheia de adrenalina. É um ambiente onde iniciantes e pilotos experientes podem evoluir, aprender e mostrar seu talento.Mais do que uma competição, o Ultimate Drift é um evento que celebra o drift como estilo de vida, valorizando a paixão pelo automobilismo, o respeito entre os pilotos e a diversão sobre quatro rodas.👉 Veja mais em: https://www.ultimatedrift.com.br/";
+  } 
+  else if (tema === 2) {
+      texto.innerHTML = '<img src="valen.jpeg" alt="Valen">';
+     
+  } 
+  else if (tema === 3) {
+    texto.innerText = "Enzo Gregorio, conhecido no automobilismo como piloto de kart é um jovem com talento, Ele é meu primo, ele se dedica ao kart competitivo desde cedo,ele tem treinos intensos e apaixonado pela velocidade, adrenalina —  Ele tem foco total nas corridas, e não em drift.Com várias etapas disputadas ao longo da temporada,Enzo Gregorio já subiu ao pódio em competições importantes, incluindo a conquista do Segundo Lugar no Campeonato Goiano de Kart F4 Júnior Novato, um dos seus destaques em sua carreira que demonstra sua velocidade e consistência nas corridas de kart.A modalidade em que ele compete é focada em desempenho em pista — controle de velocidade em pista, precisão nas curvas e competitividade entre os pilotos — mais parecida com categorias de base do automobilismo, como a Fórmula , do que com drift.";
+  }
+   else if (tema === 4) {
+     texto.innerHTML = '<img src="marrow.jpeg" alt="marrow">';
+  } 
+}
+
+ 
+
+/* TEMA INITIAL-D */
+function abrirInitialD() {
+  window.open("https://newcare.my.canva.site/", "_blank");
+}
+
+/* FUNÇÃO DO TEMA 4 */
+function abrirLogin() {
+  window.location.href = "login.html";
+}
+</script>
+
+</body>
+</html>
