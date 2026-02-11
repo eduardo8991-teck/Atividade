@@ -73,7 +73,7 @@ body {
 
 /* VÍDEO */
 .video {
-  border-bottom: 5px solid  rgb(0, 0, 0);
+  border-bottom: 5px solid rgb(0, 0, 0);
   height: 250px;
   overflow: hidden;
 }
@@ -109,7 +109,10 @@ body {
       <button onclick="mostrarTexto(3)">Enzo Gregório</button>
       <button onclick="mostrarTexto(4)">Med Max Marrow</button>
 
-    <!-- TEMA INITIAL-D -->
+      <!-- NOVO TEMA -->
+      <button onclick="mostrarTexto(5)">Sites de Drift</button>
+
+      <!-- TEMA INITIAL-D -->
       <button onclick="abrirInitialD()">Initial-D</button>
 
       <!-- TEMA 4 ABRE LOGIN -->
@@ -128,6 +131,7 @@ body {
     <div class="texto" id="texto">       
 as informações vão aparecer aqui.    d~¬(0_0)¬~b   
     </div>
+    
   </div>
 
 </div>
@@ -143,7 +147,6 @@ function mostrarTexto(tema) {
   } 
   else if (tema === 2) {
       texto.innerHTML = '<img src="valen.jpeg" alt="Valen">';
-     
   } 
   else if (tema === 3) {
     texto.innerText = "Enzo Gregorio, conhecido no automobilismo como piloto de kart é um jovem com talento, Ele é meu primo, ele se dedica ao kart competitivo desde cedo,ele tem treinos intensos e apaixonado pela velocidade, adrenalina —  Ele tem foco total nas corridas, e não em drift.Com várias etapas disputadas ao longo da temporada,Enzo Gregorio já subiu ao pódio em competições importantes, incluindo a conquista do Segundo Lugar no Campeonato Goiano de Kart F4 Júnior Novato, um dos seus destaques em sua carreira que demonstra sua velocidade e consistência nas corridas de kart.A modalidade em que ele compete é focada em desempenho em pista — controle de velocidade em pista, precisão nas curvas e competitividade entre os pilotos — mais parecida com categorias de base do automobilismo, como a Fórmula , do que com drift.";
@@ -151,9 +154,10 @@ function mostrarTexto(tema) {
    else if (tema === 4) {
      texto.innerHTML = '<img src="marrow.jpeg" alt="marrow">';
   } 
+   else if (tema === 5) {
+     texto.innerHTML = '<img src="qrcode.png" alt="qrcode">';
+  } 
 }
-
- 
 
 /* TEMA INITIAL-D */
 function abrirInitialD() {
