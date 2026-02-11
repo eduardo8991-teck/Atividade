@@ -2,10 +2,10 @@ function guardar() {
     const nome = document.getElementById("nome").value;
     const senha = document.getElementById("senha").value;
 
-    console.log("Nome:", nome);
-    console.log("Senha:", senha);
-}
+    localStorage.setItem("nomeUsuario", nome);
 
+    window.location.href = "index.html";
+}
 
 
 
