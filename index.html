@@ -60,7 +60,17 @@ body {
   cursor: pointer;
 }
 
-/* Tema 4 no final */
+/* QR FIXO NA LATERAL */
+.qr-lateral {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.qr-lateral img {
+  width: 120px;
+}
+
+/* Login fica no final */
 .menu button.tema-final {
   margin-top: auto;
 }
@@ -108,15 +118,16 @@ body {
       <button onclick="mostrarTexto(2)">Eu no ultimate</button>
       <button onclick="mostrarTexto(3)">Enzo Gregório</button>
       <button onclick="mostrarTexto(4)">Med Max Marrow</button>
-
-      <!-- NOVO TEMA -->
       <button onclick="mostrarTexto(5)">Sites de Drift</button>
 
-      <!-- TEMA INITIAL-D -->
-      <button onclick="abrirInitialD()">Initial-D</button>
+      <!-- QR FIXO DO SEU SITE -->
+      <div class="qr-lateral">
+        <p><strong>QR Drift Max</strong></p>
+        <img src="qrdriftmax.png" alt="QR Drift Max">
+      </div>
 
-      <!-- TEMA 4 ABRE LOGIN -->
-      <button class="tema-final" onclick="abrirLogin()">Login</button>
+      <!-- LOGIN -->
+      <button class="tema-final" onclick="mostrarTexto(6)">Login</button>
     </div>
   </div>
 
@@ -129,7 +140,7 @@ body {
     </div>
 
     <div class="texto" id="texto">       
-as informações vão aparecer aqui.    d~¬(0_0)¬~b   
+      as informações vão aparecer aqui.    d~¬(0_0)¬~b   
     </div>
     
   </div>
@@ -137,37 +148,59 @@ as informações vão aparecer aqui.    d~¬(0_0)¬~b
 </div>
 
 <script>
+
 function mostrarTexto(tema) {
   const texto = document.getElementById("texto");
+
 /*  codigo erro para colocar logo -> <div class="logo">
       <img src="logo.png" alt="Logo Drift">
     </div> */
+
   if (tema === 1) {
-    texto.innerText = "Ultimate Drift é um evento automotivo voltado para os apaixonados por drift, velocidade e controle extremo. Criado para reunir pilotos, equipes e fãs do automobilismo, o Ultimate Drift oferece uma experiência completa, onde técnica, emoção e espetáculo se encontram na pista.O evento acontece em pistas fechadas e controladas, garantindo segurança para pilotos e público. Nele, os participantes colocam à prova suas habilidades em manobras de derrapagem, precisão nas curvas e domínio total do carro, sempre buscando o drift perfeito.Alé das disputas na pista, o Ultimate Drift também é um ponto de encontro da cultura automotiva, reunindo carros preparados, projetos únicos, público entusiasta e uma atmosfera cheia de adrenalina. É um ambiente onde iniciantes e pilotos experientes podem evoluir, aprender e mostrar seu talento.Mais do que uma competição, o Ultimate Drift é um evento que celebra o drift como estilo de vida, valorizando a paixão pelo automobilismo, o respeito entre os pilotos e a diversão sobre quatro rodas.👉 Veja mais em: https://www.ultimatedrift.com.br/";
+    texto.innerText = "Ultimate Drift é um evento automotivo voltado para os apaixonados por drift, velocidade e controle extremo. Criado para reunir pilotos, equipes e fãs do automobilismo, o Ultimate Drift oferece uma experiência completa, onde técnica, emoção e espetáculo se encontram na pista.O evento acontece em pistas fechadas e controladas, garantindo segurança para pilotos e público. Nele, os participantes colocam à prova suas habilidades em manobras de derrapagem, precisão nas curvas e domínio total do carro, sempre buscando o drift perfeito.Alé das disputas na pista, o Ultimate Drift também é um ponto de encontro da cultura automotiva, reunindo carros preparados, projetos únicos, público entusiasta e uma atmosfera cheia de adrenalina. É um ambiente onde iniciantes e pilotos experientes podem evoluir, aprender e mostrar seu talento.Mais do que uma competição, o Ultimate Drift é um evento que celebra o drift como estilo de vida, valorizando a paixão pelo automobilismo, o respeito entre os pilotos e a diversão sobre quatro rodas.";
   } 
+
   else if (tema === 2) {
-      texto.innerHTML = '<img src="valen.jpeg" alt="Valen">';
+    texto.innerHTML = '<img src="valen.jpeg" style="width:300px;">';
   } 
+
   else if (tema === 3) {
-    texto.innerText = "Enzo Gregorio, conhecido no automobilismo como piloto de kart é um jovem com talento, Ele é meu primo, ele se dedica ao kart competitivo desde cedo,ele tem treinos intensos e apaixonado pela velocidade, adrenalina —  Ele tem foco total nas corridas, e não em drift.Com várias etapas disputadas ao longo da temporada,Enzo Gregorio já subiu ao pódio em competições importantes, incluindo a conquista do Segundo Lugar no Campeonato Goiano de Kart F4 Júnior Novato, um dos seus destaques em sua carreira que demonstra sua velocidade e consistência nas corridas de kart.A modalidade em que ele compete é focada em desempenho em pista — controle de velocidade em pista, precisão nas curvas e competitividade entre os pilotos — mais parecida com categorias de base do automobilismo, como a Fórmula , do que com drift.";
+    texto.innerText = "Enzo Gregorio, conhecido no automobilismo como piloto de kart é um jovem com talento, Ele é meu primo, ele se dedica ao kart competitivo desde cedo,ele tem treinos intensos e apaixonado pela velocidade, adrenalina — Ele tem foco total nas corridas, e não em drift.Com várias etapas disputadas ao longo da temporada,Enzo Gregorio já subiu ao pódio em competições importantes, incluindo a conquista do Segundo Lugar no Campeonato Goiano de Kart F4 Júnior Novato, um dos seus destaques em sua carreira que demonstra sua velocidade e consistência nas corridas de kart.A modalidade em que ele compete é focada em desempenho em pista — controle de velocidade em pista, precisão nas curvas e competitividade entre os pilotos — mais parecida com categorias de base do automobilismo, como a Fórmula , do que com drift.";
   }
-   else if (tema === 4) {
-     texto.innerHTML = '<img src="marrow.jpeg" alt="marrow">';
+
+  else if (tema === 4) {
+    texto.innerHTML = '<img src="marrow.jpeg" style="width:300px;">';
   } 
-   else if (tema === 5) {
-     texto.innerHTML = '<img src="qrcode.png" alt="qrcode">';
-  } 
+
+  else if (tema === 5) {
+    texto.innerHTML = `
+      <h2>Sites de Drift</h2><br>
+      <img src="qr-sites.png" style="width:200px;">
+    `;
+  }
+
+  else if (tema === 6) {
+    texto.innerHTML = `
+      <div style="text-align:center; margin-top:40px;">
+        <h2>Login Drift Max</h2><br>
+        <input id="nome" placeholder="Nome"><br><br>
+        <input id="senha" type="password" placeholder="Senha"><br><br>
+        <button onclick="guardar()">Salvar</button>
+      </div>
+    `;
+  }
 }
 
-/* TEMA INITIAL-D */
-function abrirInitialD() {
-  window.open("https://newcare.my.canva.site/", "_blank");
+function guardar() {
+  const nome = document.getElementById("nome").value;
+  const senha = document.getElementById("senha").value;
+
+  console.log("Nome:", nome);
+  console.log("Senha:", senha);
+
+  alert("Login salvo no console 😎");
 }
 
-/* FUNÇÃO DO TEMA 4 */
-function abrirLogin() {
-  window.location.href = "login.html";
-}
 </script>
 
 </body>
