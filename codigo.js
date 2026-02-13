@@ -1,12 +1,24 @@
-function guardar() {
-    const nome = document.getElementById("nome").value;
-    const senha = document.getElementById("senha").value;
+const supabaseUrl = "SUA_URL_AQUI";
+const supabaseKey = "SUA_CHAVE_AQUI";
 
-    localStorage.setItem("nomeUsuario", nome);
+const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
 
-    window.location.href = "index.html";
+async function salvar() {
+  const nome = document.getElementById("nome").value;
+  const senha = document.getElementById("senha").value;
+
+  const { data, error } = await supabase
+    .from("usuários")
+    .insert([
+      { nome: nome, senha: senha }
+    ]);
+
+  if (error) {
+    alert("Erro: " + error.message);
+  } else {
+    alert("Salvo com sucesso!");
+  }
 }
-
 
 
 
@@ -24,3 +36,4 @@ function guardar() {
 
 <script src="codigo.js"></script>
   */  
+
