@@ -4,8 +4,14 @@ const supabaseKey = "COLE_SUA_PUBLISHABLE_KEY_AQUI";
 const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
 
 async function salvar() {
+
   const nome = document.getElementById("nome").value;
   const senha = document.getElementById("senha").value;
+
+  if (!nome || !senha) {
+    alert("Preencha todos os campos!");
+    return;
+  }
 
   const { data, error } = await supabase
     .from("usuários")
